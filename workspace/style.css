@@ -86,51 +86,83 @@ header{
         font-weight: bold;
     }
 }
+@media screen and (max-width:576px){
+    nav{
+        display: none;
+    }
+}
 /* --------------------------------------------------------------------------- */
-.burger{
-    /* align-self: center; */
-    display: inline-block;
-    height: 5px;
-    width: 50px;
-    background-color: #899c40;
-    position: relative;
-  }
-  .burger::before, .burger::after{
-    position: absolute;
-    height: 5px;
-    width: 50px;
-    background-color: #899c40;
-    display: block;
-    content: '';
-    transition: transform .1s;
-  }
-  .burger::before{
-    top: -10px;
-  }
-  .burger::after{
-    top: 10px;
-  }
-  .burg{
-    cursor: pointer;
-  }
-  .burg:active .burger{
-    background-color: transparent;
-  }
-  /* .burg:active .burger::before{
-    transform: rotate(45deg);
-    transform-origin: top left;
-  }
-  .burg:hover .burger::after{
-    transform: rotate(-45deg);
-    transform-origin: bottom left;
-  } */
-  .burg:active ~nav{
-    display: block !important;
-    order: -1;
-  }
-  /* .burger:hover{
-    background-color: transparent;
-  } */
+.burg{
+    display: none;
+}
+@media screen and (max-width:576px){
+    .menu{
+        align-items: flex-start;
+    }
+    .burger{
+        /* align-self: flex-start; */
+        display: inline-block;
+        height: 5px;
+        width: 30px;
+        background-color: #adc743;
+        position: relative;
+        margin-left: 20px;
+    }
+    .burger::before, .burger::after{
+        position: absolute;
+        height: 5px;
+        width: 30px;
+        background-color: #adc743;
+        display: block;
+        content: '';
+        transition: transform .1s;
+    }
+    .burger::before{
+        top: -10px;
+    }
+    .burger::after{
+        top: 10px;
+    }
+    .burg{
+        display: inline-block;
+        cursor: pointer;
+    }
+    .burg:active .burger{
+        background-color: transparent;
+    }
+    .burg:active .burger::before{
+        transform: rotate(45deg);
+        transform-origin: top left;
+    }
+    .burg:active .burger::after{
+        transform: rotate(-45deg);
+        transform-origin: bottom left;
+    }
+    .burg:active ~nav{
+        display: block !important;
+        flex-direction: column;
+        order: 1;
+    }
+    .burg:active ~nav ul{
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        width: 100%;
+        background-color: #adc743;
+        opacity: 1;
+    }
+    .burg:active ~nav ul li{
+        width: auto;
+        padding: 0 10px;
+    }
+    .burg:active ~nav ul li a{
+        color: white;
+        font-size: 20px;
+    }
+    /* .burger:hover{
+        background-color: transparent;
+    } */
+}
 /* --------------------------------------------------------------------------- */
 .socnet{
     display: flex;
@@ -210,7 +242,7 @@ header{
         margin: 30px 0px;
     }
 }
-@media screen and (max-width:575px){
+@media screen and (max-width:576px){
     .banner{
         width: 100%;
         margin: 0px;
@@ -244,7 +276,7 @@ main .wrapper{
         display: none;
     }
 }
-@media screen and (max-width:575px){
+@media screen and (max-width:576px){
     main .wrapper{
         margin: 0px;
     }
@@ -350,7 +382,7 @@ main .wrapper{
         padding: 30px 30px 15px 30px;
     }
 }
-@media screen and (max-width:575px){
+@media screen and (max-width:576px){
     .submain12 h3{
         margin-bottom: 10px;
     }
@@ -439,7 +471,7 @@ main .wrapper{
         padding: 36px 40px 30px 40px;
     }
 }
-@media screen and (max-width:575px){
+@media screen and (max-width:576px){
     .submain22 p{
         margin-bottom: 0px;
     }
@@ -541,7 +573,7 @@ main .wrapper{
         height: 100%;
     }
 }
-@media screen and (max-width:575px){
+@media screen and (max-width:576px){
     .submain42{
         padding: 30px 30px 15px 30px;
     }
@@ -859,7 +891,7 @@ main .wrapper{
 }
 .foot2{
     margin-top: 30px;
-    margin-right: 50px;
+    margin-right: 100px;
 }
 .foot2 .socnet ul li a{
     color: white;
